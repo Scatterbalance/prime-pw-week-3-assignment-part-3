@@ -1,1 +1,5 @@
 /* give your assignment a fun background color */
+Body{
+    
+    background-image: linear-gradient(to right,  rgb(147, 147, 173), rgb(201, 196, 196));
+}
