@@ -38,6 +38,7 @@ console.log('supplyChanges:', supplyChanges);
 //    - if the value is negative, format the log as 'Removed x parts.' 
 
 console.log('6. Showing supplyChanges...');
+//for loop
 for (let index = 0; index < supplyChanges.length; index++) {
     const changesmade = supplyChanges [index]
     if (changesmade > 0){
@@ -52,20 +53,65 @@ for (let index = 0; index < supplyChanges.length; index++) {
         console.log('Removed', Math.abs(changesmade), 'parts.');
     }
 
-}
+} //end for loop
 alert ('Inventory changes complete. Confirm for stretch goals.')
 
 // STRETCH GOALS
 console.log('---  Stretch Goals  ---');
 // 7. Rewrite the `for` loop from #6 as a `for of` loop. 
-
 console.log('7. Showing supplyChanges with "for of" loop');
+//for of loop
+for (const x of supplyChanges) {
+    if (x > 0){
+        console.log('Added', x, 'parts.');
+        
+    }
+    else if (x == 0) { 
+        console.log('No change.');
+    
+    }
+    else {
+        console.log('Removed', Math.abs(x), 'parts.');
+    }
+}
+//end of for of loop
 
 
 // 8. Rewrite the `for` loop from #6 as a `while` loop.
 console.log('8. Showing supplyChanges with "while" loop');
 
+//start of while loop
+let myIndex = 0;
+while (myIndex < supplyChanges.length) {
+    if (supplyChanges [myIndex] > 0){
+        console.log('Added', supplyChanges [myIndex], 'parts.');
+        
+    }
+    else if (supplyChanges [myIndex] == 0) { 
+        console.log('No change.');
+    
+    }
+    else {
+        console.log('Removed', Math.abs(supplyChanges [myIndex]), 'parts.');
+    }
+    myIndex++;
+    
+} //end while loop
+
 
 // 9. Write a loop to determine the total number of parts available by
 //    adding up all the numbers in the 'supplyChanges' array.
 console.log('9. Total supplies available is:');
+
+let runningTotal = 0;
+//start of while loop
+myIndex = 0;
+while (myIndex < supplyChanges.length) {
+    
+    runningTotal += supplyChanges [myIndex];
+
+    myIndex++;
+    
+} //end while loop
+
+console.log('Parts available:', runningTotal);
